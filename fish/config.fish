@@ -114,6 +114,9 @@ end
 # vim and emacs
 alias vim='nvim'
 
+# ls to exa
+alias ls='exa'
+
 # pacman and yay
 alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
 alias yaysua='yay -Sua --noconfirm'              # update only AUR pkgs (yay)

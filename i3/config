@@ -23,8 +23,7 @@ set $lockScreenWallpaper $HOME/Documents/wallpapers/wp2495056.png
 set $preferredTerminalEmulator /usr/bin/alacritty
 set $preferredBrowser /usr/bin/brave
 set $preferredFileManager /usr/bin/thunar
-set $preferredMailClient /usr/bin/geary
-set $preferredTextEditor /usr/bin/geany
+set $preferredMailClient /usr/bin/thunderbird
 set $preferredScreenCaptureTool /usr/bin/flameshot gui
 
 ###########################################
@@ -33,9 +32,13 @@ set $preferredScreenCaptureTool /usr/bin/flameshot gui
 
 bindsym $super+b exec $preferredBrowser;focus
 bindsym $alt+b exec $preferredBrowser --incognito;focus
-bindsym $super+F2 exec $preferredMailClient;focus
+bindsym $super+e exec $preferredMailClient;focus
+
+### Chats
+bindsym $alt+e exec /usr/bin/element-desktop;focus
+bindsym $alt+s exec /usr/bin/slack;focus
+
 bindsym $super+F3 exec $preferredFileManager;focus
-bindsym $super+F4 exec $preferredTextEditor;focus
 
 ### Screen Capturing & Print Screen: ###
 
@@ -47,7 +50,6 @@ bindsym Print exec --no-startup-id $preferredScreenCaptureTool
 # - alacritty & xfce4-terminal can also be started using their individual keybindings
 
 bindsym $super+Return exec $preferredTerminalEmulator
-bindsym $super+t exec xfce4-terminal
 
 # set font
 font pango: source code pro 10
@@ -56,6 +58,7 @@ font pango: source code pro 10
 floating_modifier $super
 
 #autostart
+exec_always --no-startup-id picom &
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id xsettingsd &
 exec --no-startup-id pasystray
@@ -77,7 +80,6 @@ exec_always --no-startup-id numlockx on
 exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 exec --no-startup-id xrandr --output HDMI-A-0 --primary --below DVI-D-0 &
-exec_always --no-startup-id picom &
 
 # hide/unhide i3status bar
 bindsym $super+m bar mode toggle
