@@ -67,9 +67,8 @@ ${font Play:size=10:style=normal}
 ${color2}open terminal - ${alignr}${color}super+enter
 ${color2}open browser - ${alignr}${color}super+b
 ${color2}open private browser - ${alignr}${color}alt+b
-${color2}open mail - ${alignr}${color}super+F2
+${color2}open mail - ${alignr}${color}super+t
 ${color2}open filemanager - ${alignr}${color}super+F3
-${color2}open text - ${alignr}${color}super+F4
 
 #rofi
 ${color2}application launcher ... - ${alignr}${color}super+d

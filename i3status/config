@@ -70,7 +70,7 @@ battery all {
 
 tztime local {
   format = "<span color='#FBF1C7'>%time</span>"
-  format_time = "%Y-%m-%d %H:%M:%S    %Z  "
+  format_time = "%Y-%m-%d %H:%M:%S   %Z "
   # format_time = "  %H:%M:%S | %a. %d.%m.%Y "
   locale = "de_DE.UTF-8"
 }
