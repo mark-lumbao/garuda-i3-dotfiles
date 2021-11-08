@@ -5,6 +5,10 @@
 set $super  Mod4
 set $alt    Mod1
 
+# displays
+set $monitorTop DVI-D-0
+set $monitorBot HDMI-A-0
+
 ################################
 ### Commonly Used Variables: ###
 ################################
@@ -79,7 +83,6 @@ exec_always --no-startup-id numlockx on
 exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 exec_always --no-startup-id picom
-# exec --no-startup-id xrandr --output HDMI-A-0 --primary --below DVI-D-0 &
 
 # hide/unhide i3status bar
 bindsym $super+m bar mode toggle
@@ -172,7 +175,6 @@ bindsym $super+minus scratchpad show
 bindsym $super+Ctrl+Right workspace next
 bindsym $super+Ctrl+Left workspace prev
 
-
 # switch to workspace
 bindsym $alt+Control+Right workspace next
 bindsym $alt+Control+Left workspace prev
@@ -210,6 +212,17 @@ bindsym $super+Shift+w move workspace to output HDMI-A-0  # move to bottom displ
 
 bindsym $super+e focus output DVI-D-0
 bindsym $super+w focus output HDMI-A-0
+
+########################
+# Workspace Assignment #
+########################
+
+workspace 1 output $monitorBot
+workspace 2 output $monitorBot
+workspace 3 output $monitorBot
+workspace 4 output $monitorTop
+workspace 5 output $monitorTop
+workspace 6 output $monitorTop
 
 # reload the configuration file
 bindsym $super+Shift+c reload
