@@ -1,8 +1,8 @@
 # i3status configuration file.
 # see "man i3status" for documentation.
-#        color_good = "#00e6ac"
+#    color_good = "#00e6ac"
 #		 color_bad = "#ff0000"
-#        color_degraded = "#ffff66"
+#    color_degraded = "#ffff66"
 # It is important that this file is edited as UTF-8.
 # The following line should contain a sharp s:
 # ß
@@ -44,8 +44,6 @@ wireless _first_ {
   format_up = "<span color='#FBF1C7'>[  ]: On: %essid (%quality) %ip</span>"
   format_down = "" #"[  ]  Wifi: down"
 }
-
-
 
 ethernet _first_ {
   # if you use %speed, i3status requires root privileges

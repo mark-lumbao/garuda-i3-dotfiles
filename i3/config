@@ -37,16 +37,14 @@ set $preferredScreenCaptureTool /usr/bin/flameshot gui
 bindsym $super+b exec $preferredBrowser;focus
 bindsym $alt+b exec $preferredBrowser --incognito;focus
 bindsym $super+t exec $preferredMailClient;focus
+bindsym $super+F3 exec $preferredFileManager;focus
 
 ### Chats
 bindsym $alt+e exec /usr/bin/element-desktop;focus
 bindsym $alt+s exec /usr/bin/slack;focus
 
-bindsym $super+F3 exec $preferredFileManager;focus
-
 ### Screen Capturing & Print Screen: ###
 
-bindsym $super+F9 exec $preferredScreenCaptureTool
 bindsym Print exec --no-startup-id $preferredScreenCaptureTool
 
 ### Start a Terminal Emulator: ###
@@ -67,10 +65,8 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id pasystray
 exec --no-startup-id conky
 exec --no-startup-id conky -c ~/.config/conky/conky-shcts
-exec --no-startup-id copyq
 exec --no-startup-id dunst
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
-#exec --no-startup-id redshift
 exec --no-startup-id desktop-items
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
@@ -78,11 +74,10 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id setcursor
-# exec_always --no-startup-id ${HOME}/.config/polybar/launch.sh
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id picom
 exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
-exec_always --no-startup-id picom
 
 # hide/unhide i3status bar
 bindsym $super+m bar mode toggle
@@ -90,9 +85,6 @@ bindsym $super+m bar mode toggle
 # start dmenu (a program launcher)
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu_run -i -fn 'Noto Sans:size=10'"
 bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 12'
-
-# Garuda Linux install
-bindsym $super+i exec sudo -E calamares
 
 # Lock screen
 bindsym $alt+l exec i3lock -i $lockScreenWallpaper
@@ -125,7 +117,6 @@ bindsym $super+Print --release exec --no-startup-id i3-scrot -w
 bindsym $super+Shift+Print --release exec --no-startup-id i3-scrot -s
 
 # kill focused window
-bindsym $super+c kill
 bindsym $super+q kill
 
 # change focus
@@ -207,11 +198,11 @@ bindsym $alt+Shift+6 move container to workspace 6; workspace 6
 bindsym $alt+Shift+7 move container to workspace 7; workspace 7
 bindsym $alt+Shift+8 move container to workspace 8; workspace 8
 
-bindsym $super+Shift+e move workspace to output DVI-D-0    # move to top display
-bindsym $super+Shift+w move workspace to output HDMI-A-0  # move to bottom display
+bindsym $super+Shift+e move workspace to output $monitorTop   # move to top display
+bindsym $super+Shift+w move workspace to output $monitorBot   # move to bottom display
 
-bindsym $super+e focus output DVI-D-0
-bindsym $super+w focus output HDMI-A-0
+bindsym $super+e focus output $monitorTop
+bindsym $super+w focus output $monitorBot
 
 ########################
 # Workspace Assignment #
@@ -235,11 +226,11 @@ bindsym $super+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
-        bindsym Return mode "default"
+  bindsym h resize shrink width 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
+  bindsym Return mode "default"
 }
 bindsym $super+r mode "resize"
 
@@ -248,9 +239,9 @@ bindsym $super+u border none
 bindsym $super+y border pixel 1
 bindsym $super+n border normal
 
-#######
-#THEME#
-#######
+#########
+# THEME #
+#########
 
 # set primary gruvbox colorscheme colors
 set $bg #282828
@@ -266,10 +257,10 @@ set $darkgray #1d2021
 # panel
 # Start i3bar to display a workspace bar
 
+# Bottom Display bar
 bar {
+  tray_output primary
   status_command exec /usr/bin/net-speed.sh
-	#strip_workspace_numbers yes|no
-	#strip_workspace_name yes|no
 	colors {
     # bar background color
     background $bg
@@ -358,51 +349,51 @@ set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 bindsym $super+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym o      mode "$mode_gaps_outer"
+  bindsym i      mode "$mode_gaps_inner"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+  bindsym plus  gaps inner current plus 5
+  bindsym minus gaps inner current minus 5
+  bindsym 0     gaps inner current set 0
 
-        bindsy Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+  bindsy Shift+plus  gaps inner all plus 5
+  bindsym Shift+minus gaps inner all minus 5
+  bindsym Shift+0     gaps inner all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
+  bindsym plus  gaps outer current plus 5
+  bindsym minus gaps outer current minus 5
+  bindsym 0     gaps outer current set 0
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
+  bindsym Shift+plus  gaps outer all plus 5
+  bindsym Shift+minus gaps outer all minus 5
+  bindsym Shift+0     gaps outer all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 # Set shut down, restart and locking features
 bindsym $super+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    # FAILS to display background
-    # bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym l exec --no-startup-id i3lock -i $lockScreenWallpaper, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+  # FAILS to display background
+  # bindsym l exec --no-startup-id i3exit lock, mode "default"
+  bindsym l exec --no-startup-id i3lock -i $lockScreenWallpaper, mode "default"
+  bindsym s exec --no-startup-id i3exit suspend, mode "default"
+  bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+  bindsym e exec --no-startup-id i3exit logout, mode "default"
+  bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+  bindsym r exec --no-startup-id i3exit reboot, mode "default"
+  bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  # exit system mode: "Enter" or "Escape"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
