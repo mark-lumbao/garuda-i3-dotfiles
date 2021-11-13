@@ -56,7 +56,7 @@ battery all {
 }
 
 time {
-  format = "<span color='#FBF1C7'> %m-%d-%Y %I:%M:%S    %Z </span>"
+  format = "<span color='#FBF1C7'>  %m-%d-%Y |  %I:%M:%S %p |</span>"
 }
 
 load {
