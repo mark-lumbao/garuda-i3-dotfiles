@@ -11,27 +11,16 @@
 general {
   output_format = "i3bar"
   colors = true
-  #color_good = "#2E588E"
-  #color_degraded = "#FFFF00"
-  #color_bad = "#FF0000"
   interval = 1
   "markup"="pango"
 }
 
 order += "disk /"
-#order += "wireless _first_"
 order += "ethernet _first_"
-#order += "battery all"
-#order += "battery all"
-# order += "load"
 order += "memory"
-# order += "cpu_temperature 0"
-# order += "cpu_temperature 1"
-# order += "cpu_temperature 2"
-# order += "cpu_temperature 3"
-# order += "cpu_temperature 4"
+order += "cpu_usage"
 order += "volume master"
-order += "tztime local"
+order += "time"
 
 ipv6 {
   format_up = "%ip"
@@ -47,7 +36,7 @@ wireless _first_ {
 
 ethernet _first_ {
   # if you use %speed, i3status requires root privileges
-  format_up = "<span color='#FBF1C7'>%ip | %speed </span>"
+  format_up = "<span color='#FBF1C7'> %ip | %speed </span>"
   format_down = " no lan "
 }
 
@@ -66,11 +55,8 @@ battery all {
   integer_battery_capacity = true
 }
 
-tztime local {
-  format = "<span color='#FBF1C7'>%time</span>"
-  format_time = "%Y-%m-%d %H:%M:%S   %Z "
-  # format_time = "  %H:%M:%S | %a. %d.%m.%Y "
-  locale = "de_DE.UTF-8"
+time {
+  format = "<span color='#FBF1C7'> %m-%d-%Y %I:%M:%S    %Z </span>"
 }
 
 load {
@@ -78,36 +64,18 @@ load {
 }
 
 memory {
-  format = " 🐏 <span color='#FBF1C7'>%used</span> "
+  format = "<span color='#FBF1C7'> 🐏 %used </span>"
   threshold_degraded = "10%"
-  format_degraded = " 🐏 <span color='#FBF1C7'>%free</span> "
+  format_degraded = "<span color='#FBF1C7'> 🐏 %free </span>"
 }
 
-cpu_temperature 0 {
-  format = "T: %degrees °C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input"
+cpu_usage {
+  format = " <span color='#FBF1C7'>🧠 %usage</span> "
 }
-cpu_temperature 1 {
-  format = "T: %degrees °C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp2_input"
-}
-cpu_temperature 2 {
-  format = "T: %degrees °C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp3_input"
-}
-cpu_temperature 3 {
-  format = "T: %degrees °C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp4_input"
-}
-cpu_temperature 4 {
-  format = "T: %degrees °C"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp5_input"
-}
-
 
 disk "/" {
   # format = " hdd %avail "
-  format = " <span color='#FBF1C7'>⛁ %avail</span> "
+  format = " <span color='#FBF1C7'>🖴 %avail</span> "
 }
 
 volume master {
