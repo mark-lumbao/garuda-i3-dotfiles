@@ -1,3 +1,5 @@
+!fish/*.fish
+
 BraveSoftware
 Element
 GIMP
@@ -19,6 +21,7 @@ deluge
 dunst
 evolution
 falkon
+fish
 flameshot
 flashfocus
 galculator
