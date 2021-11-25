@@ -75,7 +75,7 @@ exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id setcursor
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id picom
+exec --no-startup-id picom -b
 exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 
@@ -267,10 +267,10 @@ bar {
     statusline $yellow
     # workspaces section
     #                    border  backgr. text
-    focused_workspace    $green $green $darkgray
-    inactive_workspace   $darkgray $darkgray $green
-    active_workspace     $green $darkgray $green
-    urgent_workspace     $red $darkgray $red
+    focused_workspace    $green $green $bg
+    inactive_workspace   $bg $bg $green
+    active_workspace     $green $bg $green
+    urgent_workspace     $red $bg $red
   }
 }
 

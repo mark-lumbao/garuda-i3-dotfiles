@@ -1,5 +1,6 @@
 !fish/*.fish
 
+.org.chromium.Chromium.jefIeQ
 BraveSoftware
 Element
 GIMP
@@ -8,6 +9,7 @@ Notepadqq
 QtProject.conf
 Slack
 Thunar
+VirtualBox/
 autostart
 azote
 bleachbit

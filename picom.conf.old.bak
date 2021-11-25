@@ -115,10 +115,6 @@ active-opacity = 1;
 frame-opacity = 1;
 inactive-opacity-override = false;
 
-opacity-rule = [
-  "90:class_g = 'Alacritty' && !focused",
-]
-
 # Dim inactive windows. (0.0 - 1.0)
 # inactive-dim = 0.2;
 # Do not let dimness adjust based on window opacity.
@@ -227,6 +223,11 @@ wintypes :
 
 # Use X Sync fence to sync clients' draw calls. Needed on nvidia-drivers with GLX backend for some users.
 xrender-sync-fence = true;
+
+opacity-rule = [
+ "90:class_g = 'Alacritty'",
+ "99:class_g = 'compton'",
+]
 
 #opacity-rule = [
 #"99:name *?= 'Call'",
