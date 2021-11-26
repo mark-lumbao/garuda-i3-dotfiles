@@ -92,4 +92,3 @@ ${color2}restart i3 inplace - ${alignr}${color}super+shift+r
 ${color2}reload config file - ${alignr}${color}super+shift+c
 ${color2}logout, reboot, shutdown ... - ${alignr}${color}super+0
 ]];
-
