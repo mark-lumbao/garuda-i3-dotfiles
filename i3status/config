@@ -21,6 +21,7 @@ order += "memory"
 order += "cpu_usage"
 order += "volume master"
 order += "time"
+order += "battery all"
 
 ipv6 {
   format_up = "%ip"
@@ -41,16 +42,15 @@ ethernet _first_ {
 }
 
 battery all {
-  format = "<span color='#FEFF72'> %status: %percentage </span>"   // %remaining %emptytime"
+  format = "<span color='#FBF1C7'> %status: %percentage </span>"   // %remaining %emptytime"
   format_down = "No battery"
-  # '#fa4c7e'
-  status_chr = "<span color='#00e64d'>[  ]  </span> "
-  status_bat = "<span color='#8080ff' >[   ] </span>"
-  status_unk = "[? ukwn ] "
-  status_full = "<span color='#66FF99'> [  ] </span>"
+  status_chr = " "
+  status_bat = " "
+  status_unk = "? ukwn "
+  status_full = " "
   path = "/sys/class/power_supply/BAT%d/uevent"
   low_threshold = 10
-  # last_full_capacity = true
+  last_full_capacity = true
   hide_seconds = true
   integer_battery_capacity = true
 }
