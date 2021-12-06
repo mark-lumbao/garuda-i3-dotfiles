@@ -43,7 +43,7 @@ ethernet _first_ {
 
 battery all {
   format = "<span color='#FBF1C7'> %status: %percentage </span>"   // %remaining %emptytime"
-  format_down = "No battery"
+  format_down = " No battery "
   status_chr = " "
   status_bat = " "
   status_unk = "? ukwn "
@@ -70,12 +70,12 @@ memory {
 }
 
 cpu_usage {
-  format = " <span color='#FBF1C7'>🧠 %usage</span> "
+  format = "<span color='#FBF1C7'> 🧠 %usage </span>"
 }
 
 disk "/" {
   # format = " hdd %avail "
-  format = " <span color='#FBF1C7'>🖴 %avail</span> "
+  format = "<span color='#FBF1C7'> 🖴 %avail </span>"
 }
 
 volume master {
