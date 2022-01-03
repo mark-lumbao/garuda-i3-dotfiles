@@ -1,8 +1,8 @@
 !fish/*.fish
 
-xarchiver
 .org.chromium.Chromium.jefIeQ
 BraveSoftware
+Cypress
 Element
 GIMP
 Kvantum
@@ -66,4 +66,5 @@ user-dirs.locale
 variety
 vlc
 wlogout
+xarchiver
 xfce4
