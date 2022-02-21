@@ -29,8 +29,6 @@ ipv6 {
 }
 
 wireless _first_ {
-  # format_up = "W: (%quality at %essid) %ip"
-  # format_down = "W: down"
   format_up = "<span color='#FBF1C7'>[  ]: On: %essid (%quality) %ip</span>"
   format_down = "" #"[  ]  Wifi: down"
 }
@@ -38,16 +36,16 @@ wireless _first_ {
 ethernet _first_ {
   # if you use %speed, i3status requires root privileges
   format_up = "<span color='#FBF1C7'> %ip | %speed </span>"
-  format_down = " no lan "
+  format_down = ""
 }
 
 battery all {
   format = "<span color='#FBF1C7'> %status: %percentage </span>"   // %remaining %emptytime"
-  format_down = " No battery "
-  status_chr = " "
-  status_bat = " "
-  status_unk = "? ukwn "
-  status_full = " "
+  format_down = ""
+  status_chr = "🔌"
+  status_bat = "🔋"
+  status_unk = "? "
+  status_full = "🔋"
   path = "/sys/class/power_supply/BAT%d/uevent"
   low_threshold = 10
   last_full_capacity = true
@@ -74,7 +72,6 @@ cpu_usage {
 }
 
 disk "/" {
-  # format = " hdd %avail "
   format = "<span color='#FBF1C7'> 🖴 %avail </span>"
 }
 

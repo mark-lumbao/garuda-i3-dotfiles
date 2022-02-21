@@ -90,8 +90,9 @@ bindsym $super+d exec rofi -theme gruvbox-dark-hard -lines 12 -padding 18 -width
 bindsym $alt+l exec i3lock -t -i $lockScreenWallpaper
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 1; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 1; notify-send 'brightness down'"
+# brightnessctl should be installed
+bindsym XF86MonBrightnessUp exec "brightnessctl s +10%"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
