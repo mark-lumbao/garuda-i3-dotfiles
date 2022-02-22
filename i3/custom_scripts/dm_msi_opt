@@ -1,0 +1,24 @@
+#!/bin/env bash
+
+# TITLE: MSI-PERKEYRGB DMENU HELPER
+# AUTHOR: Mark Anthony Lumbao
+# DATE: 22 February, 2022
+# DEPENDENCY: https://aur.archlinux.org/packages/msi-perkeyrgb
+
+# Select a preset then hit ENTER
+# To disable keyboard rgb just TYPE and ENTER "disable"
+# To set a single color just TYPE and ENTER the HEX color value just make sure to start with #
+
+option=$(msi-perkeyrgb --list-presets | grep - | xargs -I @ echo @ | cut -c 2- | dmenu -p "Select MSI preset")
+head=$(echo $option | cut -c 1)
+tail=$(echo $option | cut -c 2-)
+
+if [ $option == "disable" ]
+  then
+    msi-perkeyrgb -d
+  elif [ $head == "#" ]
+  then
+    msi-perkeyrgb -s $tail
+  else
+    msi-perkeyrgb -p $option
+fi

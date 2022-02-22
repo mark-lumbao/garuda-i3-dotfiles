@@ -38,6 +38,7 @@ bindsym $super+b exec $preferredBrowser;focus
 bindsym $alt+b exec $preferredBrowser --incognito;focus
 bindsym $super+t exec $preferredMailClient;focus
 bindsym $super+F3 exec $preferredFileManager;focus
+bindsym $super+F1 exec $HOME/.config/i3/custom_scripts/dm_msi_opt
 
 ### Chats
 bindsym $alt+e exec /usr/bin/element-desktop;focus
