@@ -199,4 +199,7 @@ starship init fish | source
 # bit binary path
 fish_add_path ~/bin
 
+# golang packages binary path
+fish_add_path ~/go/bin
+
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/mark/.ghcup/bin $PATH # ghcup-env
