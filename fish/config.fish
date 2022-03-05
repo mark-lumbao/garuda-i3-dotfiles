@@ -9,17 +9,9 @@ set fish_greeting                                 # Supresses fish's intro messa
 set TERM "alacritty"                              # Sets the terminal type
 set EDITOR "nvim"                                 # $EDITOR use Neovim in terminal
 
-### SET MANPAGER
-### Uncomment only one of these!
-
-### "bat" as manpager
-# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
-### "vim" as manpager
-# set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
-
-### "nvim" as manpager/
-# set -x MANPAGER "nvim -u ~/.config/nvim/init-plain.vim -c 'set ft=man' -"
+### SET MANPAGER to nvimpager
+### Dependency: nvimpager
+set -x MANPAGER "nvimpager"
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
