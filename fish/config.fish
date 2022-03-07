@@ -188,10 +188,10 @@ alias ls-coc-ext='awk -F : \'/coc/ {print $(NF-1)}\' ~/.config/coc/extensions/pa
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
 
-# bit binary path
-fish_add_path ~/bin
-
 # golang packages binary path
 fish_add_path ~/go/bin
+
+# my custom scripts
+fish_add_path ~/mybin/
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/mark/.ghcup/bin $PATH # ghcup-env
