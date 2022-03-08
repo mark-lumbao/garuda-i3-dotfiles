@@ -238,7 +238,7 @@ bindsym $super+r mode "resize"
 
 # change borders
 bindsym $super+u border none
-bindsym $super+y border pixel 1
+bindsym $super+y border pixel 2
 bindsym $super+n border normal
 
 #########
@@ -261,18 +261,18 @@ set $darkgray #1d2021
 
 bar {
   tray_output primary
-  status_command exec /usr/bin/net-speed.sh
+  status_command exec i3status
+
 	colors {
     # bar background color
     background $bg
     # text color used for blocks that do not have a color specified.
     statusline $yellow
-    # workspaces section
-    #                    border  backgr. text
-    focused_workspace    $green $green $bg
-    inactive_workspace   $bg $bg $green
-    active_workspace     $green $bg $green
-    urgent_workspace     $red $bg $red
+    # workspaces section  border  backgr. text
+    focused_workspace     $green $green $bg
+    inactive_workspace    $bg $bg $green
+    active_workspace      $green $bg $green
+    urgent_workspace      $red $bg $red
   }
 }
 
@@ -298,7 +298,6 @@ for_window [class="Pamac-updater"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Qtconfig-qt4"] floating enable border normal
 for_window [class="qt5ct"] floating enable sticky enable border normal
-#for_window [title="sudo"] floating enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
@@ -337,7 +336,7 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
