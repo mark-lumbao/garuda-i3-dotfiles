@@ -42,10 +42,12 @@ bindsym $alt+s exec /usr/bin/slack;focus
 ### Controls and Monitoring
 bindsym $super+p exec "alacritty --title 'ctl-pulse' -e pulsemixer"
 bindsym $super+t exec "alacritty --title 'ctl-htop' -e htop"
+bindsym $super+e exec "alacritty --title 'ctl-ranger' -e ranger"
 
 # Any window with name starting with ctl will be floating and sticky
 for_window [title="^ctl"] floating enable sticky enable
 for_window [title="htop$"] resize set 1000 800
+for_window [title="ranger$"] resize set 1000 800
 for_window [title="^ctl"] move absolute position center
 
 ### Screen Capturing & Print Screen: ###
