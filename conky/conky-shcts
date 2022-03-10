@@ -85,8 +85,8 @@ ${color2}switch to workspace 1-8 - ${alignr}${color}super+1-8
 ${color2}send to workspace 1-8 - ${alignr}${color}super+shift+1-8
 # Move to workspace with focused container
 ${color2}move to workspace 1-8 - ${alignr}${color}alt+shift+1-8
-${color2}navigate workspaces - ${alignr}${color}super+ctrl+arrowkeys
-${color2}navigate windows - ${alignr}${color}super+shift+arrowkeys
+${color2}navigate workspaces - ${alignr}${color}super+ctrl+{ j | k }
+${color2}navigate windows - ${alignr}${color}super+shift+{ h | j | k | l }
 ${color2}change focus - ${alignr}${color}super+{ h | j | k | l }
 ${color2}restart i3 inplace - ${alignr}${color}super+shift+r
 ${color2}reload config file - ${alignr}${color}super+shift+c
