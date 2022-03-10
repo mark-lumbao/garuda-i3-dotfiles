@@ -5,10 +5,6 @@
 set $super  Mod4
 set $alt    Mod1
 
-# displays
-set $monitorTop DVI-D-0
-set $monitorBot HDMI-A-0
-
 ################################
 ### Commonly Used Variables: ###
 ################################
@@ -27,7 +23,6 @@ set $lockScreenWallpaper $HOME/Documents/wallpapers/roaFKt.png
 set $preferredTerminalEmulator /usr/bin/alacritty
 set $preferredBrowser /usr/bin/brave
 set $preferredFileManager /usr/bin/thunar
-set $preferredMailClient /usr/bin/thunderbird
 set $preferredScreenCaptureTool /usr/bin/flameshot gui
 
 ###########################################
@@ -36,13 +31,22 @@ set $preferredScreenCaptureTool /usr/bin/flameshot gui
 
 bindsym $super+b exec $preferredBrowser;focus
 bindsym $alt+b exec $preferredBrowser --incognito;focus
-bindsym $super+t exec $preferredMailClient;focus
+
 bindsym $super+F3 exec $preferredFileManager;focus
 bindsym $super+F1 exec $HOME/mybin/dm_msi_opt
 
 ### Chats
 bindsym $alt+e exec /usr/bin/element-desktop;focus
 bindsym $alt+s exec /usr/bin/slack;focus
+
+### Controls and Monitoring
+bindsym $super+p exec "alacritty --title 'ctl-pulse' -e pulsemixer"
+bindsym $super+t exec "alacritty --title 'ctl-htop' -e htop"
+
+# Any window with name starting with ctl will be floating and sticky
+for_window [title="^ctl"] floating enable sticky enable
+for_window [title="htop$"] resize set 1000 800
+for_window [title="^ctl"] move absolute position center
 
 ### Screen Capturing & Print Screen: ###
 
@@ -67,7 +71,6 @@ exec --no-startup-id pasystray
 exec --no-startup-id conky
 exec --no-startup-id conky -c ~/.config/conky/conky-shcts
 exec --no-startup-id dunst
-#exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id desktop-items
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
@@ -157,13 +160,6 @@ bindsym $super+Shift+s sticky toggle
 # focus the parent container
 bindsym $super+a focus parent
 
-# move the currently focused window to the scratchpad
-bindsym $super+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $super+minus scratchpad show
-
 #navigate workspaces next / previous
 bindsym $super+Ctrl+Right workspace next
 bindsym $super+Ctrl+Left workspace prev
@@ -200,31 +196,11 @@ bindsym $alt+Shift+6 move container to workspace 6; workspace 6
 bindsym $alt+Shift+7 move container to workspace 7; workspace 7
 bindsym $alt+Shift+8 move container to workspace 8; workspace 8
 
-bindsym $super+Shift+e move workspace to output $monitorTop   # move to top display
-bindsym $super+Shift+w move workspace to output $monitorBot   # move to bottom display
-
-bindsym $super+e focus output $monitorTop
-bindsym $super+w focus output $monitorBot
-
-########################
-# Workspace Assignment #
-########################
-
-workspace 1 output $monitorBot
-workspace 2 output $monitorBot
-workspace 3 output $monitorBot
-workspace 4 output $monitorTop
-workspace 5 output $monitorTop
-workspace 6 output $monitorTop
-
 # reload the configuration file
 bindsym $super+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
-
-# exit i3
-#bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -276,43 +252,9 @@ bar {
   }
 }
 
-# Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="bauh"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable border normal
-for_window [class="Garuda Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="azote"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pamac-updater"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Qtconfig-qt4"] floating enable border normal
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Timeshift-gtk"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
-for_window [class="keepassxc"] floating enable
-for_window [class="garuda-welcome"] floating enable
-
 # window rules, you can find the window class using xprop
+for_window [title="Azote"] floating enable sticky enable border normal
 for_window [class=".*"] border pixel 2
-assign [class=URxvt] 1
-for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|upgrade2ultimate.sh] floating enable
-for_window [class=URxvt|firedragon|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
-for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a $bg $bg #bf616a $green
