@@ -2,6 +2,8 @@
 
 > Theme : Gruvbox dark
 
+![preview](./assets/screenshot.png)
+
 ## Dependencies
 
 - fish
@@ -15,6 +17,7 @@
 - nvimpager
 - brightnessctl
 - starship
+- ttf-font-awesome-5
 
 ### Miscellaneous
 

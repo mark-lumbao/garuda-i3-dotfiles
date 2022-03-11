@@ -31,13 +31,13 @@ ipv6 {
 }
 
 wireless _first_ {
-  format_up = "<span color='#FBF1C7'>  %essid %quality %ip </span>"
-  format_down = "" #"[  ]  Wifi: down"
+  format_up = "<span color='#FBF1C7'> <span color='#8ec07c'>&#xf1eb;</span> %essid %quality %ip </span>"
+  format_down = ""
 }
 
 ethernet _first_ {
   # if you use %speed, i3status requires root privileges
-  format_up = "<span color='#FBF1C7'> %ip | %speed </span>"
+  format_up = "<span color='#FBF1C7'> <span color='#fabd2f'>&#xf796;</span> %ip %speed </span>"
   format_down = ""
 }
 
@@ -56,7 +56,7 @@ battery all {
 }
 
 time {
-  format = "<span color='#FBF1C7'>  %m-%d-%Y  %I:%M:%S %p </span>"
+  format = "<span color='#FBF1C7'> <span color='#fabd2f'>&#xf073;</span> %m-%d-%Y <span color='#fabd2f'>&#xf017;</span> %I:%M:%S %p </span>"
 }
 
 load {
@@ -64,13 +64,13 @@ load {
 }
 
 memory {
-  format = "<span color='#FBF1C7'> 🐏 %used </span>"
+  format = "<span color='#FBF1C7'> <span color='#fe8019'>&#xf538;</span> %used </span>"
   threshold_degraded = "10%"
-  format_degraded = "<span color='#FBF1C7'> 🐏 %free </span>"
+  format_degraded = "<span color='#FBF1C7'> &#xf2db; %free </span>"
 }
 
 cpu_usage {
-  format = "<span color='#FBF1C7'> 🧠 %usage</span>"
+  format = "<span color='#FBF1C7'> <span color='#d3869b'>&#xf2db;</span> %usage</span>"
   separator = false
 }
 
@@ -79,17 +79,17 @@ cpu_temperature 0 {
 }
 
 disk "/" {
-  format = "<span color='#FBF1C7'> 🖴 SSD %avail </span>"
+  format = "<span color='#FBF1C7'> <span color='#83a598'>&#xf0a0;</span> SSD %avail </span>"
 }
 
 disk "/home/Downloads/" {
-  format = "<span color='#FBF1C7'>🖴 HDD %avail</span>"
+  format = "<span color='#FBF1C7'> <span color='#83a598'>&#xf0a0;</span> HDD %avail</span>"
   separator = false
 }
 
 volume master {
-  format = "<span color='#FBF1C7'> 🔊 %volume </span>"
-  format_muted = "<span color='#cfafc8'> 🔇 muted %volume </span>"
+  format = "<span color='#FBF1C7'> <span color='#b8bb26'>&#xf028;</span> %volume </span>"
+  format_muted = "<span color='#fb4934'> &#xf6a9; %volume </span>"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
