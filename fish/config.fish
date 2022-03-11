@@ -181,10 +181,6 @@ alias ssh-xtendops-do='TERM=xterm-256color ssh developers@128.199.120.140'
 # Docker
 alias docker-delete-dangling-images='docker images -f "dangling=true" -q | xargs -I @ docker rmi @'
 
-# coc extensions management
-alias bu-coc-ext='rm -f ~/backups/(whoami).coc && awk -F : \'/coc/ {print $(NF-1)}\' ~/.config/coc/extensions/package.json | xargs | cat > ~/backups/(whoami).coc'
-alias ls-coc-ext='awk -F : \'/coc/ {print $(NF-1)}\' ~/.config/coc/extensions/package.json | xargs -n 1'
-
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
 
