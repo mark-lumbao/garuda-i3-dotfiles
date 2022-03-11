@@ -14,6 +14,7 @@
 - neovim
 - nvimpager
 - brightnessctl
+- starship
 
 ### Miscellaneous
 
