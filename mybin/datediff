@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+##############################
+# Date Difference Calculator #
+# Dependency: nodejs         #
+##############################
+
+echo "console.log(Math.round((new Date('$2').getTime() - new Date('$1')) / 86400000), 'days')" | node

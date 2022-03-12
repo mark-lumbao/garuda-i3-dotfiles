@@ -134,5 +134,4 @@ configuration {
 /*      me-accept-entry: "MouseD1";*/
 /*      me-accept-custom: "Control+MouseD1";*/
 }
-//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
 @theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

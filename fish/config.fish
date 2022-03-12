@@ -188,6 +188,6 @@ starship init fish | source
 fish_add_path ~/go/bin
 
 # my custom scripts
-fish_add_path ~/mybin/
+fish_add_path ~/.config/mybin
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/mark/.ghcup/bin $PATH # ghcup-env

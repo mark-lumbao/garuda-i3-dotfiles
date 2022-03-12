@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+
+input=$(cat /dev/stdin)
+
+echo "console.log('$input'.replace('$1', '$2'))" | node
