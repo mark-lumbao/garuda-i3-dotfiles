@@ -81,7 +81,7 @@ exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id setcursor
 exec_always --no-startup-id numlockx on
-exec --no-startup-id picom -b
+exec --no-startup-id picom --experimental-backends --blur-method dual_kawase &
 exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 
