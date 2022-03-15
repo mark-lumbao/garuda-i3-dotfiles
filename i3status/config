@@ -32,18 +32,18 @@ ipv6 {
 }
 
 wireless _first_ {
-  format_up = "<span color='#FBF1C7'> <span color='#8ec07c'>&#xf1eb;</span> %essid %quality %ip </span>"
+  format_up = "<span color='#FBF1C7'><span color='#8ec07c'>&#xf1eb;</span> %essid %quality %ip</span>"
   format_down = ""
 }
 
 ethernet _first_ {
   # if you use %speed, i3status requires root privileges
-  format_up = "<span color='#FBF1C7'> <span color='#fabd2f'>&#xf796;</span> %ip %speed </span>"
+  format_up = "<span color='#FBF1C7'><span color='#fabd2f'>&#xf796;</span> %ip %speed</span>"
   format_down = ""
 }
 
 battery all {
-  format = "<span color='#FBF1C7'>%status %percentage</span>"   // %remaining %emptytime"
+  format = "<span color='#FBF1C7'>%status %percentage</span>"
   format_down = ""
   status_chr = "&#xf1e6;"
   status_bat = "&#xf241;"
@@ -57,7 +57,7 @@ battery all {
 }
 
 time {
-  format = "<span color='#FBF1C7'> <span color='#fabd2f'>&#xf073;</span> %m-%d-%Y <span color='#fabd2f'>&#xf017;</span> %I:%M:%S %p </span>"
+  format = "<span color='#FBF1C7'><span color='#fabd2f'>&#xf073;</span> %m-%d-%Y <span color='#fabd2f'>&#xf017;</span> %I:%M:%S %p</span>"
 }
 
 load {
@@ -65,32 +65,30 @@ load {
 }
 
 memory {
-  format = "<span color='#FBF1C7'> <span color='#fe8019'>&#xf538;</span> %used </span>"
+  format = "<span color='#FBF1C7'><span color='#fe8019'>&#xf538;</span> %used</span>"
   threshold_degraded = "10%"
-  format_degraded = "<span color='#FBF1C7'> &#xf2db; %free </span>"
+  format_degraded = "<span color='#FBF1C7'>&#xf2db; %free</span>"
 }
 
 cpu_usage {
-  format = "<span color='#FBF1C7'> <span color='#d3869b'>&#xf2db;</span> %usage</span>"
-  separator = false
+  format = "<span color='#FBF1C7'><span color='#d3869b'>&#xf2db;</span> %usage</span>"
 }
 
 cpu_temperature 0 {
-  format = "<span color='#FBF1C7'>%degrees°C </span>"
+  format = "<span color='#FBF1C7'><span color='#cc241d'>&#xf769;</span> %degrees°C</span>"
 }
 
 disk "/" {
-  format = "<span color='#FBF1C7'> <span color='#83a598'>&#xf0a0;</span> SSD %avail </span>"
+  format = "<span color='#FBF1C7'> <span color='#83a598'>&#xf0a0;</span> SSD %avail</span>"
 }
 
 disk "/home/Downloads/" {
-  format = "<span color='#FBF1C7'> <span color='#83a598'>&#xf0a0;</span> HDD %avail</span>"
-  separator = false
+  format = "<span color='#FBF1C7'><span color='#83a598'>&#xf0a0;</span> HDD %avail</span>"
 }
 
 volume master {
-  format = "<span color='#FBF1C7'> <span color='#b8bb26'>&#xf028;</span> %volume </span>"
-  format_muted = "<span color='#fb4934'> &#xf6a9; %volume </span>"
+  format = "<span color='#FBF1C7'><span color='#b8bb26'>&#xf028;</span> %volume</span>"
+  format_muted = "<span color='#fb4934'>&#xf6a9; %volume</span>"
   device = "default"
   mixer = "Master"
   mixer_idx = 0

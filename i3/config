@@ -242,12 +242,13 @@ bar {
   tray_output primary
   status_command exec i3status
   font pango:DejaVu Sans Mono, Font Awesome 5 Free 10
+  separator_symbol "  "
 
 	colors {
     # bar background color
     background $bg
     # text color used for blocks that do not have a color specified.
-    statusline $yellow
+    statusline $white
     # workspaces section  border  background  text
     focused_workspace     $green  $green      $bg
     inactive_workspace    $bg     $bg         $green

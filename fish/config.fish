@@ -173,11 +173,6 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 # get weather
 alias weather='curl https://wttr.in'
 
-# SSH Connections
-alias ssh-xtendops-aws='TERM=xterm-256color ssh -i ~/.ssh/ec2_t3a_large_kp.pem ubuntu@ec2-13-229-65-19.ap-southeast-1.compute.amazonaws.com'
-alias ssh-xtendops-awsp='TERM=xterm-256color ssh ubuntu@172.31.29.228'
-alias ssh-xtendops-do='TERM=xterm-256color ssh developers@128.199.120.140'
-
 # Docker
 alias docker-delete-dangling-images='docker images -f "dangling=true" -q | xargs -I @ docker rmi @'
 
