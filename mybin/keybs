@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+# List all i3wm keybindings
+
+i3config=~/.config/i3/config
+
+awk '/bindsym/ {for(i=2;i<=NF;i++) printf $i" "; print ""}' $i3config | nvimpager -- -c "set nowrap"

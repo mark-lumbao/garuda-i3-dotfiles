@@ -43,11 +43,11 @@ bindsym $alt+s exec /usr/bin/slack;focus
 bindsym $super+p exec "alacritty --title 'ctl-pulse' -e pulsemixer"
 bindsym $super+t exec "alacritty --title 'ctl-htop' -e htop"
 bindsym $super+e exec "alacritty --title 'ctl-ranger' -e ranger"
+bindsym $super+F7 exec "alacritty --title 'ctl-keybs' -e ~/.config/mybin/keybs"
 
 # Any window with name starting with ctl will be floating and sticky
 for_window [title="^ctl"] floating enable sticky enable
-for_window [title="htop$"] resize set 1000 800
-for_window [title="ranger$"] resize set 1000 800
+for_window [title="(htop|ranger|keybs)$"] resize set 1000 800
 for_window [title="^ctl"] move absolute position center
 
 ### Screen Capturing & Print Screen: ###
@@ -81,7 +81,7 @@ exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id setcursor
 exec_always --no-startup-id numlockx on
-exec --no-startup-id picom --experimental-backends --blur-method dual_kawase &
+exec --no-startup-id picom --experimental-backends &
 exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 
