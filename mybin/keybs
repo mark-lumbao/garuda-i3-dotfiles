@@ -1,7 +1,15 @@
 #!/bin/env bash
 
 # List all i3wm keybindings
+# Dependecy: glow
 
 i3config=~/.config/i3/config
 
-awk '/bindsym/ {for(i=2;i<=NF;i++) printf $i" "; print ""}' $i3config | nvimpager -- -c "set nowrap"
+awk \
+'BEGIN {\
+printf "\
+# i3wm Keybinds Directory \n\n\
+| Keychord | Command |\n|----------|---------|\n"}\
+/bindsym/\
+{printf "| `"$2"` | "; for(i=3;i<=NF;i++) printf $i" "; print "|"}\
+' $i3config | glow - -p
