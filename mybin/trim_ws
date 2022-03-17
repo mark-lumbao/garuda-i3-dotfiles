@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+# Trim all whitespaces for filenames in the current directory
+
+for f in *; do mv "$f" `echo $f | tr ' ' '_'`; done

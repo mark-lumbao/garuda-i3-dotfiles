@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+# Concatenate multiple audio and video files
+# that are in the same directory into one .mkv file
+
+ls |
+  xargs -I @ echo "file '@'" >> input.txt &&
+  ffmpeg -f concat -i input.txt -c copy output.mkv &&
+  rm input.txt
