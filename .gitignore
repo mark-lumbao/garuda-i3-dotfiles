@@ -6,6 +6,7 @@ Cypress
 Element
 GIMP
 Kvantum
+MongoDB Compass
 Notepadqq
 QtProject.conf
 Slack
@@ -51,6 +52,7 @@ nvim
 okularpartrc
 okularrc
 omf
+packer
 pamac
 pavucontrol.ini
 polybar

@@ -17,7 +17,7 @@
 - nvimpager
 - brightnessctl
 - starship
-- ttf-font-awesome-5
+- nerd-fonts-hasklig
 
 ### Miscellaneous
 
