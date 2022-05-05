@@ -22,7 +22,6 @@ set $lockScreenWallpaper $HOME/Documents/wallpapers/roaFKt.png
 
 set $preferredTerminalEmulator /usr/bin/alacritty
 set $preferredBrowser /usr/bin/brave
-set $preferredFileManager /usr/bin/thunar
 set $preferredScreenCaptureTool /usr/bin/flameshot gui
 
 ###########################################
@@ -32,8 +31,11 @@ set $preferredScreenCaptureTool /usr/bin/flameshot gui
 bindsym $super+b exec $preferredBrowser;focus
 bindsym $alt+b exec $preferredBrowser --incognito;focus
 
-bindsym $super+F3 exec $preferredFileManager;focus
-bindsym $super+F1 exec $HOME/.config/mybin/dm_msi_opt
+### Backlit CTRL
+bindsym F1 exec "brightnessctl s 10%-"
+bindsym F2 exec "brightnessctl s +10%"
+bindsym $super+F1 exec "brightnessctl s 1%"
+bindsym $super+Escape exec $HOME/.config/mybin/dm_msi_opt
 
 ### Chats
 bindsym $alt+e exec /usr/bin/element-desktop;focus
