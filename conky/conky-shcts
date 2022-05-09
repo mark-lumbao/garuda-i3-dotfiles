@@ -44,10 +44,10 @@ conky.config = {
   uppercase = false,
 
   -- Defining colors
-  default_color = '#FFFFFF',
+  default_color = '#222222',
   -- Shades of Gray
   color1 = '#DDDDDD',
-  color2 = '#AAAAAA',
+  color2 = '#222222',
   color3 = '#FFFFFF',
   -- Orange EF5A29 green 159a7f
   color4 = '#808080',
@@ -63,15 +63,14 @@ conky.config = {
 }
 
 conky.text = [[
-${font Play:size=10:style=normal}
+${font Hasklug Nerd Font:size=10:style=normal}
 ${color2}open terminal - ${alignr}${color}super+enter
 ${color2}open browser - ${alignr}${color}super+b
 ${color2}open private browser - ${alignr}${color}alt+b
 ${color2}open mail - ${alignr}${color}super+t
-${color2}open filemanager - ${alignr}${color}super+F3
 
 #rofi
-${color2}application launcher ... - ${alignr}${color}super+d
+${color2}application launcher - ${alignr}${color}super+d
 ${color2}screenshot - ${alignr}${color}print
 
 ${color2}resize window - ${alignr}${color}super+r
@@ -85,10 +84,10 @@ ${color2}switch to workspace 1-8 - ${alignr}${color}super+1-8
 ${color2}send to workspace 1-8 - ${alignr}${color}super+shift+1-8
 # Move to workspace with focused container
 ${color2}move to workspace 1-8 - ${alignr}${color}alt+shift+1-8
-${color2}navigate workspaces - ${alignr}${color}super+ctrl+{ j | k }
-${color2}navigate windows - ${alignr}${color}super+shift+{ h | j | k | l }
-${color2}change focus - ${alignr}${color}super+{ h | j | k | l }
+${color2}navigate workspaces - ${alignr}${color}super+ctrl+{ j|k }
+${color2}navigate windows - ${alignr}${color}super+shift+{ h|j|k|l }
+${color2}change focus - ${alignr}${color}super+{ h|j|k|l }
 ${color2}restart i3 inplace - ${alignr}${color}super+shift+r
 ${color2}reload config file - ${alignr}${color}super+shift+c
-${color2}logout, reboot, shutdown ... - ${alignr}${color}super+0
+${color2}logout, reboot, shutdown - ${alignr}${color}super+0
 ]];
