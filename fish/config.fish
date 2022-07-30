@@ -186,3 +186,8 @@ fish_add_path ~/go/bin
 fish_add_path ~/.config/mybin
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/mark/.ghcup/bin $PATH # ghcup-env
+
+# bun
+set -Ux BUN_INSTALL "/home/mark/.bun"
+fish_add_path "/home/mark/.bun/bin"
+

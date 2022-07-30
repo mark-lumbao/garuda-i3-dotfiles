@@ -11,8 +11,10 @@ Notepadqq
 QtProject.conf
 Slack
 Thunar
+Unknown Organization/
 VirtualBox/
 autostart
+awesome
 azote
 balena-etcher-electron
 bleachbit
@@ -35,6 +37,7 @@ garuda
 geany
 geary
 goa-1.0
+google-chrome/
 gtk-2.0
 gtk-3.0
 htop
@@ -60,8 +63,8 @@ psd
 pulse
 pulseaudio-ctl
 qpdfview
-qtile
 qt5ct
+qtile
 smplayer
 stalonetray
 strawberry
@@ -73,3 +76,4 @@ vlc
 wlogout
 xarchiver
 xfce4
+zoomus.conf
