@@ -1,0 +1,19 @@
+#!/bin/env bash
+
+
+withoutV() {
+  npm -g list | tail -$(npm -g list | wc -l | xargs -I@ expr @ - 1) | awk '{ print $2 }' | sed 's/@[0-9]/ /g' | awk '{ print $1 }' | xargs -n1
+}
+
+withV() {
+  npm -g list | tail -$(npm -g list | wc -l | xargs -I@ expr @ - 1) | awk '{ print $2 }' | xargs -n1
+}
+
+if [ -z ${1} ]
+  then withoutV
+else
+  if [ ${1} == "-V" ]
+    then withV
+    else echo "Unknown flag ${1}."; exit;
+  fi
+fi
