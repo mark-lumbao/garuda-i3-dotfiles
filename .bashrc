@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # ALIASES
-alias ls="ls --color=auto"
+alias ls="exa"
 alias vim="/usr/bin/nvim"
 
 PS1='[\u@\h \W]\$ '
